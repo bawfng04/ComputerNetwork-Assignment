@@ -11,10 +11,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.download-progress h2 {
-  font-size: 1.5em;
+.downloadTitle{
+  display: flex;
+  justify-content: space-between;
+}
+
+.download-progress h2, .download-progress p {
+  font-size: 1em;
   margin-bottom: 10px;
   color: #333;
+  text-align: left;
+  font-weight: bold;
 }
 
 .download-progress progress {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { files, fileTypes } from "./files";
+import { DownloadList } from "./DownloadProgess/DownloadList";
 import "./UI.css";
 import GraphVisualize from "./NodesVisualize/GraphVisualize";
 import DownloadProgess from "./DownloadProgess/DownloadProgess";
@@ -140,7 +141,14 @@ const UI = () => {
       </div>
 
       <div className="downloadProgess">
-        <DownloadProgess fileName={"test.jpg"} progress={30} />
+        {DownloadList.map((download, index) => (
+          <DownloadProgess
+            key={index}
+            fileName={download.fileName}
+            fileSize={download.fileSize}
+            currentDownload={download.currentDownload}
+          />
+        ))}
       </div>
     </div>
   );
