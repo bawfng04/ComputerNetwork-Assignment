@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { files, fileTypes } from "./files";
-import DownloadProgess from "./DownloadProgess";
 import "./UI.css";
-import fileIcon from "./Images/fileIcon.png";
+import GraphVisualize from "./NodesVisualize/GraphVisualize";
+import DownloadProgess from "./DownloadProgess/DownloadProgess";
 
 const UI = () => {
   const [downloadFile, setDownloadFile] = useState("");
@@ -77,6 +77,10 @@ const UI = () => {
 
   return (
     <div className="UI">
+      <div className="graphVisualize">
+        <GraphVisualize />
+      </div>
+
       <div className="renderDownloadBar">
         <select className="select1" onChange={handleDownloadChange}>
           <option value="">Select file</option>
@@ -125,6 +129,7 @@ const UI = () => {
                   </div>
                 ))}
             </div>
+
             <div className="downloadButton">
               <button onClick={handleDownloadFile} className="downloadButton">
                 Download

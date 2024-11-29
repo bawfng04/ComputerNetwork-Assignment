@@ -10,14 +10,12 @@
   }
 }
 
-
-
 .checkbox-group {
   margin-top: 20px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #3c068d;
+  background-color: #2a1d3d;
 
 }
 
@@ -36,7 +34,7 @@
 
 .selectedAll {
   padding: 5px 15px;
-  background-color: #7f41dc;
+  background-color: #4e248c;
   color: white;
   border: none;
   border-radius: 3px;
@@ -61,7 +59,7 @@
 }
 
 .selectType:hover {
-  background-color: #5e349c;
+  background-color: #52357c;
   color: white;
 }
 
@@ -133,3 +131,12 @@
   width: 20px;
   margin-right: 10px;
 }
+
+
+.downloadButton {
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+
