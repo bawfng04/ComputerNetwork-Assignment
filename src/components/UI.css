@@ -1,4 +1,17 @@
-/* Improved CSS */
+
+@keyframes fadeInDown{
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 .checkbox-group {
   margin-top: 20px;
   padding: 15px;
@@ -81,4 +94,8 @@
 
 .downloadButton button:hover {
   background-color: #218838;
+}
+
+.a{
+  animation: fadeInDown 1.5s;
 }

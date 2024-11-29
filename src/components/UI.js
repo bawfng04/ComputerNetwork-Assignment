@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { files, fileTypes } from "./files";
+import DownloadProgess from "./DownloadProgess";
 import "./UI.css";
 
 const UI = () => {
@@ -77,7 +78,7 @@ const UI = () => {
     <div className="UI">
       <div className="renderDownloadBar">
         <select className="select1" onChange={handleDownloadChange}>
-          <option value="selectedFile">Select file</option>
+          <option value="">Select file</option>
           {files.map((file) => (
             <option key={file.filename} value={file.filename}>
               {file.filename}
@@ -86,48 +87,54 @@ const UI = () => {
         </select>
 
         {downloadFile && (
-          <div className="checkbox-group">
-            <div className="headSelect">
-              <label>Select file type</label>
+          <div className="a">
+            <div className="checkbox-group">
+              <div className="headSelect">
+                <label>Select file type</label>
 
-              <button className="selectedAll" onClick={handleSelectedAll}>
-                {selectedAll ? "Deselect all" : "Select all"}
+                <button className="selectedAll" onClick={handleSelectedAll}>
+                  {selectedAll ? "Deselect all" : "Select all"}
+                </button>
+              </div>
+
+              {fileTypes
+                .filter((file) => file.filename === downloadFile)[0]
+                ?.filetype.map((type, index) => (
+                  <div key={index} className="selectType">
+                    <input
+                      type="checkbox"
+                      id={`checkbox-${index}`}
+                      value={type}
+                      onChange={handleDownloadTypeChange}
+                      checked={downloadFileType.includes(type)}
+                    />
+                    <label htmlFor={`checkbox-${index}`}>
+                      {type} (
+                      {
+                        fileTypes.filter(
+                          (file) => file.filename === downloadFile
+                        )[0]?.filesize[index]
+                      }{" "}
+                      KB)
+                    </label>
+                  </div>
+                ))}
+            </div>
+            <div className="downloadButton">
+              <button onClick={handleDownloadFile} className="downloadButton">
+                Download
               </button>
             </div>
-
-            {fileTypes
-              .filter((file) => file.filename === downloadFile)[0]
-              ?.filetype.map((type, index) => (
-                <div key={index} className="selectType">
-                  <input
-                    type="checkbox"
-                    id={`checkbox-${index}`}
-                    value={type}
-                    onChange={handleDownloadTypeChange}
-                    checked={downloadFileType.includes(type)}
-                  />
-                  <label htmlFor={`checkbox-${index}`}>
-                    {type} (
-                    {
-                      fileTypes.filter(
-                        (file) => file.filename === downloadFile
-                      )[0]?.filesize[index]
-                    }{" "}
-                    KB)
-                  </label>
-                </div>
-              ))}
           </div>
         )}
+      </div>
 
-        <div className="downloadButton">
-          <button onClick={handleDownloadFile} className="downloadButton">
-            Download
-          </button>
-        </div>
+      <div className="downloadProgess">
+        <DownloadProgess fileName={"test.jpg"} progress={30} />
       </div>
     </div>
   );
 };
+
 
 export default UI;
