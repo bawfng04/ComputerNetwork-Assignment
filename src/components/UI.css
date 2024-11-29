@@ -1,0 +1,84 @@
+/* Improved CSS */
+.checkbox-group {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.headSelect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.headSelect label {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.selectedAll {
+  padding: 5px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.selectedAll:hover {
+  background-color: #0056b3;
+}
+
+.selectType {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.selectType input[type="checkbox"] {
+  margin-right: 15px;
+  transform: scale(1.5);
+}
+
+.selectType label {
+  cursor: pointer;
+}
+
+.select1 {
+  font-size: medium;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.select1:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.downloadButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.downloadButton button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.downloadButton button:hover {
+  background-color: #218838;
+}
