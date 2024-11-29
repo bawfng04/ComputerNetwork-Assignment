@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { files, fileTypes } from "./files";
 import DownloadProgess from "./DownloadProgess";
 import "./UI.css";
+import fileIcon from "./Images/fileIcon.png";
 
 const UI = () => {
   const [downloadFile, setDownloadFile] = useState("");
@@ -108,14 +109,18 @@ const UI = () => {
                       onChange={handleDownloadTypeChange}
                       checked={downloadFileType.includes(type)}
                     />
+
                     <label htmlFor={`checkbox-${index}`}>
-                      {type} (
-                      {
-                        fileTypes.filter(
-                          (file) => file.filename === downloadFile
-                        )[0]?.filesize[index]
-                      }{" "}
-                      KB)
+                      <span className="fileTypeName">{type} </span>
+
+                      <span className="fileSize">
+                        {
+                          fileTypes.filter(
+                            (file) => file.filename === downloadFile
+                          )[0]?.filesize[index]
+                        }{" "}
+                        KB
+                      </span>
                     </label>
                   </div>
                 ))}

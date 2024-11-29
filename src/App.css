@@ -1,5 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+#root {
+  margin: 0px;
+  padding: 0px !important;
+  width: 100vw;
+  height: 100vh;
+  background: url("./components/Images/bg.png") no-repeat center center fixed;
+}
+
+
+
+
 .App {
   text-align: center;
+  margin: 0px;
+  padding: 20px;
 }
 
 .App-logo {

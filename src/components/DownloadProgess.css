@@ -3,12 +3,11 @@
 .download-progress {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 20px;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,14 +32,14 @@
 }
 
 .download-progress progress::-webkit-progress-value {
-  background-color: #4caf50;
+  background-color: #6122bf;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
 }
 
 .download-progress progress::-moz-progress-bar {
-  background-color: #4caf50;
+  background-color: #4406a1;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
